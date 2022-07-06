@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "39456142374",
+    "project_id": "edenfarm-fa665",
+    "storage_bucket": "edenfarm-fa665.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39456142374:android:cfa00e3b47e6cd73d5e2e7",
+        "android_client_info": {
+          "package_name": "com.example.fit_tracker_eden_farm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39456142374-n8q9r1rgbv193o31vd4cflc4se3t5ggm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fit_tracker_eden_farm",
+            "certificate_hash": "a1c7670e5e9cccd4b06b1d87c35793431f4516e7"
+          }
+        },
+        {
+          "client_id": "39456142374-79bd3plgnj6p275m3eb446laipi6qv29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-SWmHoEG0IMfhJKdfVYoabRN2zHi0gB8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39456142374-79bd3plgnj6p275m3eb446laipi6qv29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

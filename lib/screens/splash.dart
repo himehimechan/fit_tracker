@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+
+import 'package:fit_tracker_eden_farm/config/config.dart';
+import 'package:fit_tracker_eden_farm/modules/auth/auth.dart';
+import 'package:fit_tracker_eden_farm/routes/routes.dart';
+import 'package:fit_tracker_eden_farm/widgets/logo.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+class Splash extends StatefulWidget {
+  const Splash({Key? key}) : super(key: key);
+
+  @override
+  _SplashState createState() => _SplashState();
+}
+
+class _SplashState extends State<Splash> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance?.addPostFrameCallback((_) async {
+      await _init();
+    });
+  }
+
+  Future _init() async {
+    // Do some necessary things opening Home Screen, such as:
+    //
+    // Loading data from Shared Preferences
+    // Loading initial data from backend
+    // Initializes states
+    // etc..
+
+    // dummy delay to show splash screen
+    // remove this in real application
+    await Future.delayed(const Duration(seconds: 2));
+    // Show Home Screen
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String checkSession = prefs.getString(Str.sessionIdStr) ?? 'null';
+    if (checkSession != "null") {
+      Get.offNamed(Routes.main_screen);
+    } else {
+      Get.offNamed(Routes.login);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Logo(opacity: 0.96),
+          const Gap(18),
+          Text(
+            Str.appName,
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+}
